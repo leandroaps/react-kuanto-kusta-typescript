@@ -3,8 +3,10 @@ import '../styles/Loading.scss';
 const Loader: React.FC = () => {
   return (
     <div className="overlay">
-      <div className="spinner-border" role="status">
-        <span className="visually-hidden">Loading...</span>
+      <div className="loading">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
       </div>
     </div>
   )
