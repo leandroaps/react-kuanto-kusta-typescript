@@ -15,7 +15,7 @@ const Router: React.FC = () => {
         <Route path="/" element={<Products />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/details/:id" element={<Details />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </React.Suspense>

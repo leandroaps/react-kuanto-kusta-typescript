@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import '../styles/Products.scss';
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Products: React.FC = () => {
   const [products, setProducts] = useState([])
@@ -9,20 +11,8 @@ const Products: React.FC = () => {
     void fetch('https://fakestoreapi.com/products')
       .then(async (res) => await res.json())
       .then((json) => {
-        console.log(json)
-      })
-  }, [])
-
-  useEffect(() => {
-    void fetch('https://fakestoreapi.com/products')
-      .then(async (res) => await res.json())
-      .then((json) => {
         setProducts(json)
       })
-
-    return () => {
-      console.log(products)
-    }
   }, [])
 
   return (
@@ -44,12 +34,12 @@ const Products: React.FC = () => {
               Price US$ {product.price}
             </span>
             <p className="card-text">{product.description}</p>
-            <a href="#" className="btn btn-primary">
+            <Link to={`/details/${product.id}`} className="btn btn-primary">
               Details
-            </a>
-            <a href="#" className="btn btn-primary">
-              Add to Cart
-            </a>
+            </Link>
+            <Link to={`/details/${product.id}`} className="btn btn-primary">
+              Add Cart
+            </Link>
           </div>
         </div>
       ))}

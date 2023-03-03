@@ -54,7 +54,7 @@
     "precommit": "npm run lint:fix && npm test",
     "prepush": "npm run lint",
     "prepare": "husky install",
-    "commit": "git add . && git-cz"
+    "commit": "git add . && git-cz && git push"
   },
   "eslintConfig": {
     "extends": [
